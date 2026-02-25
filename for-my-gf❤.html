@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>For My GF — I'm Sorry</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+color:white;
+}
+.container{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:95%;
+max-width:600px;
+text-align:center;
+}
+
+/* HOME */
+#home{display:flex;flex-direction:column;gap:20px;}
+.main-title{
+font-size:42px;
+font-weight:700;
+color:#ff4d88;
+text-shadow:0 0 25px #ff4d88;
+}
+.sub-title{
+font-size:20px;
+opacity:.9;
+line-height:1.5;
+}
+.love-btn{
+padding:14px 25px;
+border:none;
+border-radius:30px;
+background:#ff4d88;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 15px #ff4d88;
+}
+.love-btn:hover{
+transform:scale(1.1);
+background:#ff1f66;
+}
+
+/* APP */
+#app{display:none;}
+
+h2{
+font-size:32px;
+color:#ff4d88;
+text-shadow:0 0 15px #ff4d88;
+margin-bottom:15px;
+}
+
+.apology-desc{
+font-size:18px;
+opacity:0.9;
+margin-bottom:20px;
+line-height:1.6;
+}
+
+.note{
+background:rgba(255,255,255,0.1);
+padding:25px;
+margin-top:15px;
+border-radius:20px;
+animation:fadeIn 1s ease;
+font-size:18px;
+line-height:1.8;
+}
+
+/* POLAROID */
+.polaroid{
+background:white;
+padding:15px 15px 50px 15px;
+border-radius:10px;
+box-shadow:0 15px 30px rgba(0,0,0,0.5);
+margin-top:30px;
+transform:rotate(-3deg);
+animation:fadeIn 1.5s ease;
+display:inline-block;
+}
+
+.polaroid img{
+width:100%;
+border-radius:5px;
+}
+
+.polaroid p{
+color:#333;
+font-size:14px;
+margin-top:10px;
+font-weight:bold;
+}
+
+/* HEART */
+.heart{
+position:fixed;
+top:-10px;
+color:#ff4d88;
+animation:fall linear infinite;
+pointer-events:none;
+}
+@keyframes fall{
+to{transform:translateY(110vh);}
+}
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div id="home">
+<div class="main-title">FOR MY GF 💌</div>
+<div class="sub-title">
+Ada sesuatu yang benar-benar ingin aku sampaikan dari hati...
+</div>
+<button class="love-btn" onclick="enterApp()">Buka Surat ❤️</button>
+</div>
+
+<div id="app">
+<h2>Special Message Just For You 🌹</h2>
+<p class="apology-desc">
+Ini bukan sekadar tulisan… ini isi hati aku yang paling dalam 🤍
+</p>
+
+<div class="note">
+alloo sayangggg, akuu bener bener gabisa sayangg kaloo ga samaa kamuuu,<br><br>
+maaff ya aku selaluu egois akan hal ini, aku sesayangg ituu samaa kamuuu,<br><br>
+secintaa ituu samaa kamuu🤍🤍,<br><br>
+pls jangan tinggalin aku yaa🥺❤️,<br><br>
+iloveyou more than anything bby❤️🌏,<br><br>
+maacii yaa udaa bacaa💋💋.
+
+<div class="polaroid">
+    <img src="foto_gf.jpg" alt="my favorite person">
+    <p>my favorite person 🤍</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+function enterApp(){
+document.getElementById("home").style.display="none";
+document.getElementById("app").style.display="block";
+}
+
+setInterval(()=>{
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),8000);
+},300);
+</script>
+
+</body>
+</html>
